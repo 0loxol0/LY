@@ -158,8 +158,8 @@ def menu():
 
     logo()
     print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93m-------------------------------------------------------")
-    print ' \x1b[1;92m╠══[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mAuthor     : \x1b[1;92mHacker Libya \x1b[1;93mX \x1b[1;92mHARIS GANZ'
-    print ' \x1b[1;92m╠══[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mVersion    : \x1b[1;92m5.5'
+    print ' \x1b[1;92m╠══[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mAuthor     : \x1b[1;92mHacker Libya \x1b[1;93mX \x1b[1;92mAhmed Alzwage'
+    print ' \x1b[1;92m╠══[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mVersion    : \x1b[1;92mx_x'
     print ' \x1b[1;92m╠══[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mFacebook   : \x1b[1;92mAhmed Alzwage '
     print(" \x1b[1;92m╠══[\x1b[1;93m•\x1b[1;92m] \x1b[1;93m══════════════════════════════════════")
     print(" \x1b[1;92m╠══[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mBergabung  \x1b[1;93m: %s\x1b[1;92m"%(tgl))

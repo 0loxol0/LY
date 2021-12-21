@@ -434,7 +434,7 @@ def cek_opsi(user,pw):
 		"Host":"mbasic.facebook.com",
 		"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
 		"accept-encoding":"gzip, deflate",
-		"accept-language":"en-US;q=0.9",
+		"accept-language":"id-ID,id;q=0.9",
 		"referer":"https://mbasic.facebook.com/",
 		"user-agent":"nokiac3-00/5.0 (07.20) profile/midp-2.1 configuration/cldc-1.1 mozilla/5.0 applewebkit/420+ (khtml, like gecko) safari/420+"
 	})
@@ -443,7 +443,7 @@ def cek_opsi(user,pw):
 	for x in soup("input"):
 		data.update({x.get("name"):x.get("value")})
 	data.update({"email":user,"pass":pw})
-	urlPost=session.post("https://www.facebook.com"+link.get("action"),data=data)
+	urlPost=session.post("https://mbasic.facebook.com"+link.get("action"),data=data)
 	response=parser(urlPost.text, "html.parser")
 	if "Temukan Akun Anda" in re.findall("\<title>(.*?)<\/title>",str(urlPost.text)):
 		print("\r %s[!] aktifkan mode pesawat selama 5 detik%s"%(M,N))

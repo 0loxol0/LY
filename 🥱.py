@@ -431,10 +431,10 @@ def cek_opsi(user,pw):
 	global loop,ubahP,pwbaru
 	session=requests.Session()
 	session.headers.update({
-		"Host":"www.facebook.com",
+		"Host":"mbasic.facebook.com",
 		"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
 		"accept-encoding":"gzip, deflate",
-		"accept-language":"en-US-en;q=0.9",
+		"accept-language":"en-US;q=0.9",
 		"referer":"https://www.facebook.com/",
 		"user-agent":"nokiac3-00/5.0 (07.20) profile/midp-2.1 configuration/cldc-1.1 mozilla/5.0 applewebkit/420+ (khtml, like gecko) safari/420+"
 	})

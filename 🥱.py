@@ -431,7 +431,7 @@ def cek_opsi(user,pw):
 	global loop,ubahP,pwbaru
 	session=requests.Session()
 	session.headers.update({
-		"Host":"m.facebook.com",
+		"Host":"https://b-api.facebook.com",
 		"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
 		"accept-encoding":"gzip, deflate",
 		"accept-language":"en-US;q=0.9",

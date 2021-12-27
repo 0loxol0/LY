@@ -1,6 +1,6 @@
 #!/usr/bin/python3 
 #-*-coding:utf-8-*- 
-#Create By Aang Ardiansyah-XD
+#Create By Ahmed Alzwage 
 import requests,bs4,sys,os,random,time,re,json,uuid,subprocess
 from random import randint
 from concurrent.futures import ThreadPoolExecutor as ThreadPool
@@ -58,7 +58,7 @@ def clear():
     elif "win" in sys.platform.lower():os.system("cls")
     else:os.system("clear")
 def banner():
-    print("\x1b[0;97m   ___                   \n  / _ \_______             ® \n / ___/ __/ -_) Multi Brute  ┌──────────────────────────────┐\n/_/  /_/__\__/(_) Force 4.0  │   Code By Aang Ardiansyah.   │\n       /  ^ \/ / // /  ^ \   │   •• Github.com/AngCyber ••  │\n      /_/_/_/_/\_,_/_/_/_/   └──────────────────────────────┘\n")
+    print("\x1b[0;97m   ___                   \n  / _ \_______             ® \n / ___/ __/ -_) Multi Brute  ┌──────────────────────────────┐\n/_/  /_/__\__/(_) Force 4.0  │   Code By AhmedAlzwage.   │\n       /  ^ \/ / // /  ^ \   │   •• Github.com/AhmedAlzwage ••  │\n      /_/_/_/_/\_,_/_/_/_/   └──────────────────────────────┘\n")
 def menu_log():
     os.system('rm -rf token.txt')
     clear()
@@ -182,7 +182,7 @@ def menu():
     except (KeyError,IOError):
         status = 'Premium/Pro'
         users = '-'
-        kunci = 'A-ang-Ganteng-2021'
+        kunci = 'A-Alzwage-2021'
         bergabung = '-'
         kadaluarsa = '30-Desember-2030'
         pro = ("%s[%sPro%s]"%(K,P,K))

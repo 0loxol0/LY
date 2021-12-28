@@ -58,7 +58,7 @@ def clear():
     elif "win" in sys.platform.lower():os.system("cls")
     else:os.system("clear")
 def banner():
-    print("\x1b[0;97m   ___                   \n  / _ \_______             ® \n / ___/ __/ -_) Multi Brute  ┌──────────────────────────────┐\n/_/  /_/__\__/(_) Force 4.0  │   Code By AhmedAlzwage.     │\n       /  ^ \/ / // /  ^ \   │ •• Github.com/AhmedAlzwage ••│\n      /_/_/_/_/\_,_/_/_/_/   └──────────────────────────────┘\n")
+    print("\x1b[0;97m   ___                   \n  / _ \_______             ® \n / ___/ __/ -_) Multi Brute  ┌──────────────────────────────┐\n/_/  /_/__\__/(_) Force 5.0  │    Code By AhmedAlzwage.     │\n       /  ^ \/ / // /  ^ \   │ •• Github.com/AhmedAlzwage ••│\n      /_/_/_/_/\_,_/_/_/_/   └──────────────────────────────┘\n")
 def menu_log():
     os.system('rm -rf token.txt')
     clear()

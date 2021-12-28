@@ -492,10 +492,18 @@ def pass_dev(_cici_):
         elif len(i)==3 or len(i)==4 or len(i)==5:
             _dapunta_.append(i+"123")
             _dapunta_.append(i+"12345")
+            _dapunta_.append(i+"1234")
+            _dapunta_.append("20032003")
+            _dapunta_.append("20012001")
+            _dapunta_.append("20022002")
         else:
             _dapunta_.append(i)
             _dapunta_.append(i+"123")
             _dapunta_.append(i+"12345")
+            _dapunta_.append(i+"1234")
+            _dapunta_.append("20032003")
+            _dapunta_.append("20012001")
+            _dapunta_.append("20022002")
     if pp in ['',' ','  ']:pass
     else:
         for i in _cici_.split(" "):  

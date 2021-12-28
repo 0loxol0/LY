@@ -58,7 +58,7 @@ def clear():
     elif "win" in sys.platform.lower():os.system("cls")
     else:os.system("clear")
 def banner():
-    print("\x1b[0;97m   ___                   \n  / _ \_______             ® \n / ___/ __/ -_) Multi Brute  ┌──────────────────────────────┐\n/_/  /_/__\__/(_) Force 4.0  │   Code By AhmedAlzwage.   │\n       /  ^ \/ / // /  ^ \   │   •• Github.com/AhmedAlzwage ••  │\n      /_/_/_/_/\_,_/_/_/_/   └──────────────────────────────┘\n")
+    print("\x1b[0;97m   ___                   \n  / _ \_______             ® \n / ___/ __/ -_) Multi Brute  ┌──────────────────────────────┐\n/_/  /_/__\__/(_) Force 4.0  │   Code By AhmedAlzwage.     │\n       /  ^ \/ / // /  ^ \   │ •• Github.com/AhmedAlzwage ••│\n      /_/_/_/_/\_,_/_/_/_/   └──────────────────────────────┘\n")
 def menu_log():
     os.system('rm -rf token.txt')
     clear()
@@ -174,7 +174,7 @@ def menu():
         users = wk['username']
         bergabung = wk['joined']
         kadaluarsa = wk['expired']
-        status = ('%sPremium [%sPro%s]'%(K,P,K))
+        status = ('%sLibya [%sPro%s]'%(K,P,K))
         kunci = ('%s%s%s-%s%s%s-%sXXXXX'%(K,kun[0],P,K,kun[1],P,K))
         pro = ''
         upgrade = 'Change License Key'
@@ -182,7 +182,7 @@ def menu():
     except (KeyError,IOError):
         status = 'Premium/Pro'
         users = '-'
-        kunci = 'A-Alzwage-2021'
+        kunci = 'A-Alzwage-2025'
         bergabung = '-'
         kadaluarsa = '30-Desember-2030'
         pro = ("%s[%sPro%s]"%(K,P,K))
@@ -510,13 +510,13 @@ def pass_dev(_cici_):
     return _dapunta_
 def tambah_pass():
     print('%s[%s Setel Password %s]'%(K,P,K))
-    print('%s[%s•%s] %sContoh : sayang,bismillah,123456,786786'%(K,P,K,P))
+    print('%s[%s•%s] %sContoh : libya123,20002000,123456,786786'%(K,P,K,P))
     cuy = input('%s[%s•%s] %sMasukan Pass Tambahan [1 Kata] : '%(K,P,K,P))
     gh = open('pass.txt','w')
     gh.write(cuy)
     gh.close
 def tambah_pass_angka():
-    print('%s[%s•%s] %sContoh : 321,786,gaming,ganteng'%(K,P,K,P))
+    print('%s[%s•%s] %sContoh : 321,786,gaming,pubg'%(K,P,K,P))
     coy = input('%s[%s•%s] %sMasukan Pass Dibelakang Nama : '%(K,P,K,P))
     xy = open('passangka.txt','w')
     xy.write(coy)
@@ -1416,9 +1416,9 @@ def var_ugen():
     print("%s[%s5%s] %sCek User Agent"%(K,P,K,P))
     print("%s[%s0%s] %sKembali"%(K,P,K,P))
 def start_method():
-    print('\n%s[%s1%s] %sMetode B-Api [Kenceng]'%(K,P,K,P))
-    print('%s[%s2%s] %sMetode Mbasic [Mode Santuy]'%(K,P,K,P))
-    print('%s[%s3%s] %sMetode Free Fb [Ini Lambat Bego]'%(K,P,K,P))
+    print('\n%s[%s1%s] %sMetode B-Api [♡]'%(K,P,K,P))
+    print('%s[%s2%s] %sMetode Mbasic [♕]'%(K,P,K,P))
+    print('%s[%s3%s] %sMetode Free Fb [©]'%(K,P,K,P))
 def started():
     print('\n%s[%s•%s] %sCrack Sedang Berjalan...'%(K,P,K,P))
     print('%s[%s•%s] %sAkun OK Saved In OK/%s.txt'%(K,P,K,P,tanggal))
@@ -1433,4 +1433,4 @@ if __name__=='__main__':
   os.system('git pull')
   folder()
   menu()
-# Aang-XD Ganteng.
+# Ahmed alzwage XZ.

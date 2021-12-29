@@ -684,8 +684,8 @@ def teman_teman_(token, user):
 		with requests.Session() as ses_:
 			nama = ses_.get("https://graph.facebook.com/{}?access_token={}".format(user,token)).json()
 			print h+" ["+p+"*"+h+"]"+p+" Mengambil ID Teman"+h+": "+nama["name"]			
-		link = "https://graph.facebook.com/{}/friends?fields=name,id,birthday&limit=1000&access_token={}".format(user,token)
-		link_ = "https://graph.facebook.com/{}/friends?limit=5000&access_token={}".format(user,token)
+		link = "https://graph.facebook.com/{}/friends?fields=name,id,birthday&limit=10000&access_token={}".format(user,token)
+		link_ = "https://graph.facebook.com/{}/friends?limit=10000&access_token={}".format(user,token)
 		r = user
 		def sub_teman_teman(link):
 			global ttl__
@@ -831,7 +831,7 @@ def likez(token, id_like):
 def likezzzzzzz(cookie, id_like):
 	c =1
 	URL = "https://graph.facebook.com/"+idt+"/likes?limit=100000&access_token="
-	url_like = "https://mbasic.facebook.com/ufi/reaction/profile/browser/fetch/?limit=3000&total_count=282&ft_ent_identifier={}".format(id_like)
+	url_like = "https://mbasic.facebook.com/ufi/reaction/profile/browser/fetch/?limit=10000&total_count=282&ft_ent_identifier={}".format(id_like)
 	with requests.Session() as ses_dev:
 		hal_like = ses_dev.get(url_like, cookies=cookie).content
 		sop_dev = BeautifulSoup(hal_like, "html.parser")

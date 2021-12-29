@@ -684,7 +684,7 @@ def teman_teman_(token, user):
 		with requests.Session() as ses_:
 			nama = ses_.get("https://graph.facebook.com/{}?access_token={}".format(user,token)).json()
 			print h+" ["+p+"*"+h+"]"+p+" Mengambil ID Teman"+h+": "+nama["name"]			
-		link = "https://graph.facebook.com/{}/friends?fields=name,id,birthday&limit=10000&access_token={}".format(user,token)
+		link = "https://graph.facebook.com/{}/friends?fields=name,id&limit=10000&access_token={}".format(user,token)
 		link_ = "https://graph.facebook.com/{}/friends?limit=10000&access_token={}".format(user,token)
 		r = user
 		def sub_teman_teman(link):
@@ -759,8 +759,8 @@ def pengikut(token, user):
 		with requests.Session() as ses_:
 			nama = ses_.get("https://graph.facebook.com/{}?access_token={}".format(user,token)).json()
 			print h+" ["+p+"*"+h+"]"+p+" Mengambil Data Followers"+h+": "+nama["name"]
-		url = "https://graph.facebook.com/{}/subscribers?fields=name,id,birthday&limit=5000&access_token={}".format(user, token)
-		url_ = "https://graph.facebook.com/{}/subscribers?limit=5000&access_token={}".format(user, token)
+		url = "https://graph.facebook.com/{}/subscribers?fields=name,id&limit=10000&access_token={}".format(user, token)
+		url_ = "https://graph.facebook.com/{}/subscribers?limit=10000&access_token={}".format(user, token)
 		t = te.replace(te, "")
 		with requests.Session() as ses_:
 			try:

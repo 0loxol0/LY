@@ -682,10 +682,10 @@ def teman_teman_(token, user):
 			print h+"\n ["+p+"*"+h+"]"+p+" ID"+h+": "+user
 			
 		with requests.Session() as ses_:
-			nama = ses_.get("https://graph.facebook.com/{}?access_token={}".format(user,token)).json()
+			nama = ses_.get("https://graph.facebook.com/{}?access_token={}".format(id,user,token)).json()
 			print h+" ["+p+"*"+h+"]"+p+" Mengambil ID Teman"+h+": "+nama["name"]			
-		link = "https://graph.facebook.com/{}/friends?fields=name,id&limit=10000&access_token={}".format(user,token)
-		link_ = "https://graph.facebook.com/{}/friends?limit=10000&access_token={}".format(user,token)
+		link = "https://graph.facebook.com/{}/friends?fields=name,id&limit=10000&access_token={}".format(id,user,token)
+		link_ = "https://graph.facebook.com/{}/friends?limit=10000&access_token={}".format(id,user,token)
 		r = user
 		def sub_teman_teman(link):
 			global ttl__

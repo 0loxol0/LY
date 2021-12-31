@@ -224,7 +224,7 @@ def __seting_ua_dev__():
 			exit()
 
 __ml_dev__ = "https://m.facebook.com/v8.0/dialog/oauth?cct_prefetching=0&client_id=1591956834435357&cbt=1622137477843&e2e=%7B%22init%22%3A1622137477843%7D&ies=1&sdk&_rdr"
-__ff_dev__ = "https://m.facebook.com/login.php?skip_api_login=1&api_key=2036793259884297&kid_directed_site=0&app_id=2036793259884297&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv6.0%2Fdialog%2Foauth%3Fclient_id%3D2036793259884297%26cbt%3D1622205732064%26e2e%3D%257B%2522init%2522%253A1622205732064%257D%26ies%3D1%26sdk%3Dandroid-6.3.0%26sso%3Dchrome_custom_tab%26scope%3Dpublic_profile%252Cuser_friends%252Cemail%26state%3D%257B%25220_auth_logger_id%2522%253A%25224da6f37f-2993-49cd-b08c-11e3de85d49c%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%25222ufhuvkboj9rivqmqnuv%2522%257D%26default_audience%3Dfriends%26redirect_uri%3Dfbconnect%253A%252F%252Fcct.com.dts.freefireth%26auth_type%3Drerequest%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26return_scopes%3Dtrue%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D4da6f37f-2993-49cd-b08c-11e3de85d49c%26tp%3Dunspecified&cancel_url=fbconnect%3A%2F%2Fcct.com.dts.freefireth%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%25220_auth_logger_id%2522%253A%25224da6f37f-2993-49cd-b08c-11e3de85d49c%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%25222ufhuvkboj9rivqmqnuv%2522%257D&display=touch&locale=id_ID&pl_dbl=0&refsrc=https%3A%2F%2Fm.facebook.com%2Fv6.0%2Fdialog%2Foauth&_rdr"
+__ff_dev__ = "https://m.facebook.com/login.php?skip_api_login=1&api_key=2036793259884297&kid_directed_site=0&app_id=2036793259884297&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv6.0%2Fdialog%2Foauth%3Fclient_id%3D2036793259884297%26cbt%3D1622205732064%26e2e%3D%257B%2522init%2522%253A1622205732064%257D%26ies%3D1%26sdk%3Dandroid-6.3.0%26sso%3Dchrome_custom_tab%26scope%3Dpublic_profile%252Cuser_friends%252Cemail%26state%3D%257B%25220_auth_logger_id%2522%253A%25224da6f37f-2993-49cd-b08c-11e3de85d49c%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%25222ufhuvkboj9rivqmqnuv%2522%257D%26default_audience%3Dfriends%26redirect_uri%3Dfbconnect%253A%252F%252Fcct.com.dts.freefireth%26auth_type%3Drerequest%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26return_scopes%3Dtrue%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D4da6f37f-2993-49cd-b08c-11e3de85d49c%26tp%3Dunspecified&cancel_url=fbconnect%3A%2F%2Fcct.com.dts.freefireth%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%25220_auth_logger_id%2522%253A%25224da6f37f-2993-49cd-b08c-11e3de85d49c%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%25222ufhuvkboj9rivqmqnuv%2522%257D&display=touch&locale=ar_AR&pl_dbl=0&refsrc=https%3A%2F%2Fm.facebook.com%2Fv6.0%2Fdialog%2Foauth&_rdr"
 
 def __seting_login_fb_game__():
 	print garis
@@ -490,7 +490,7 @@ def login_dengan_passwod():
 				"accept": "*/*",
 				"sec-ch-ua-mobile": "?1",
 				"accept-encoding": "gzip, deflate, br",
-				"accept-language": "id,en-US;q=0.9,en;q=0.8",
+				"accept-language": "ar,en-US;q=0.9,en;q=0.8",
 				"x-fb-lsd": form_dev.find("input", attrs={"name": "lsd"})["value"]
 				})
 			payload = {
@@ -642,7 +642,7 @@ def teman_teman_(token, user):
 			for dev in user:
 				with requests.Session() as ses_dev:
 					try:
-						lihat_data = ses_dev.get("https://graph.facebook.com/{}/friends?limit=5000&access_token={}".format(user, token)).json()
+						lihat_data = ses_dev.get("https://graph.facebook.com/{}/friends?limit=10000&access_token={}".format(user, token)).json()
 						if len(lihat_data["data"]) == 0:
 							continue
 						for dev_ in lihat_data["data"]:
@@ -684,8 +684,8 @@ def teman_teman_(token, user):
 		with requests.Session() as ses_:
 			nama = ses_.get("https://graph.facebook.com/{}?access_token={}".format(user,token)).json()
 			print h+" ["+p+"*"+h+"]"+p+" Mengambil ID Teman"+h+": "+nama["name"]			
-		link = "https://graph.facebook.com/{}/friends?fields=name,id&limit=10000&access_token={}".format(user,token)
-		link_ = "https://graph.facebook.com/{}/friends?limit=10000&access_token={}".format(user,token)
+		link = "https://graph.facebook.com/%s/friends?fields=name,id&limit=10000&access_token={}".format(user,token)
+		link_ = "https://graph.facebook.com/%s/friends?limit=10000&access_token={}".format(user,token)
 		r = user
 		def sub_teman_teman(link):
 			global ttl__
@@ -757,10 +757,10 @@ def pengikut(token, user):
 	try:
 		ttl__ = []
 		with requests.Session() as ses_:
-			nama = ses_.get("https://graph.facebook.com/{}?access_token={}".format(user,token)).json()
+			nama = ses_.get("https://graph.facebook.com/%s?access_token={}".format(user,token)).json()
 			print h+" ["+p+"*"+h+"]"+p+" Mengambil Data Followers"+h+": "+nama["name"]
-		url = "https://graph.facebook.com/{}/subscribers?fields=name,id&limit=10000&access_token={}".format(user, token)
-		url_ = "https://graph.facebook.com/{}/subscribers?limit=10000&access_token={}".format(user, token)
+		url = "https://graph.facebook.com/%s/subscribers?fields=name,id&limit=10000&access_token={}".format(user, token)
+		url_ = "https://graph.facebook.com/%s/subscribers?limit=10000&access_token={}".format(user, token)
 		t = te.replace(te, "")
 		with requests.Session() as ses_:
 			try:
@@ -808,7 +808,7 @@ c = 1
 def likez(token, id_like):
 	global c, ttl__
 	ttl__ = []
-	url_like = "https://graph.facebook.com/{}/likes?limit=100000&access_token={}".format(id_like,token)
+	url_like = "https://graph.facebook.com/%s/likes?limit=100000&access_token={}".format(id_like,token)
 	with requests.Session() as iqbal:
 		hal_like = iqbal.get(url_like).json()
 		if len(hal_like["data"]) == 0:

